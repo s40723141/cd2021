@@ -1,0 +1,59 @@
+<h1>About</h1>
+<p>此內容管理系統以 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 作為 submodule 運作, 可以選定對應的版本運作, cmsimde 可以持續改版, 不會影響之前設為 submodule, 使用舊版 cmsimde 模組的內容管理相關運作.</p>
+<h4>利用 cmsimde 建立靜態網誌方法:</h4>
+<p>1. 在 github 建立倉儲, git clone 到近端</p>
+<p>2. 參考 <a href="https://github.com/mdecourse/newcms">https://github.com/mdecourse/newcms</a>, 加入除了 cmsimde 目錄外的所有內容</p>
+<p>以 git submodule add <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> cmsimde</p>
+<p>建立 cmsimde 目錄, 並從 github 取下子模組內容.</p>
+<p>3.在近端維護時, 更換目錄到倉儲中的 cmsimde, 以 python wsgi.py 啟動近端網際伺服器.</p>
+<p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
+<p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
+<p>git clone --recurse-submodules <a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
+<h1>Work</h1>
+<h2>week 1</h2>
+<h3>架設網站</h3>
+<p>至<a href="https://github.com/mdecourse/cd2021/discussions/7">https://github.com/mdecourse/cd2021/discussions/7</a></p>
+<p>下載最新的python 3.9.1版本 可攜系統</p>
+<p>開啟start_ipv4.bat</p>
+<p>查看版本</p>
+<p><img alt="" height="363" src="/images/1.jpg" width="635"/></p>
+<p><img alt="" height="610" src="/images/2.jpg" width="637"/></p>
+<p><img alt="" height="289" src="/images/3.jpg" width="621"/></p>
+<h4>在tmp底下新增資料夾命名為git_ref資料夾並在裡面新增git_config.txt的檔案，檔案內容為</h4>
+<h4>git config --global</h4>
+<h4>http.proxy <a href="http://[2001:288:6004:17::69]:3128">http://[2001:288:6004:17::69]:3128</a></h4>
+<p>在home_ipv4資料夾中新增檔案.gitconfig，檔案內容為</p>
+<h4>[http]<br/>#proxy = <a href="http://[2001:288:6004:17::69]:3128">http://[2001:288:6004:17::69]:3128</a></h4>
+<p>登入自己的github，新增cd2021倉儲</p>
+<p><img alt="" height="233" src="/images/4.jpg" width="373"/></p>
+<p>將<span>Add a README file、Add .gitignore、Choose a license三個選項全部勾選，</span></p>
+<p><span>勾選Add .gitignore後選擇python選項，</span></p>
+<p><span>勾選Choose a license後選擇GNU Affero General Public License v3.0選項。</span></p>
+<p><img alt="" height="1033" src="/images/5.jpg" width="957"/></p>
+<p><img alt="" height="915" src="/images/6.jpg" width="953"/></p>
+<p></p>
+<p>在黑窗中進入tmp，輸入指令git clone <a href="https://github.com/40723141/cd2021.git">https://github.com/40723141/cd2021.git</a>，clone下自己的倉儲。</p>
+<p><img alt="" height="181" src="/images/7.jpg" width="480"/></p>
+<p><span>輸入指令git submodule add https://github.com/mdecourse/cmsimde.git cmsimde，克隆老師提供的範例倉儲。</span></p>
+<p><span>進入cmd，cd2021，cmsimde，up_dir，複製所有檔案，<img alt="" height="609" src="/images/8.jpg" width="764"/></span></p>
+<p>貼到tmp的cd2021資料夾底下。</p>
+<p>進入cmsimde底下，依次輸入pip install flask、</p>
+<p>pip install flask_cors、</p>
+<p>pip install lxml、</p>
+<p>pip install bs4、</p>
+<p>pip install markdown、</p>
+<p>pip install pelican、</p>
+<p>pip install leo指令，安裝各個模組，之後輸入python wsgi.py，</p>
+<p>打開網頁，login輸入密碼admin，</p>
+<p>點選config<span>按鈕</span>更改標題為40723141(自己的學號) cd2021，點save按鈕，</p>
+<p>回到黑窗按ctrl+c，輸入指令git add.，git cinfig user.name"47023141"(自己的學號)，</p>
+<p>git config user.email "40723141@gm.nfu.edu.tw"(學校信箱)。</p>
+<p>git commit -m "此次修改內容的標題"，</p>
+<p>git push後輸入github的帳號密碼，到github的倉儲，進入setting，找到github pages，將選項main更改為save。</p>
+<h3>Leo</h3>
+<p>啟動黑窗，進入tmp，輸入指令leo開啟Leo程式。</p>
+<p><img alt="" height="379" src="/images/9.jpg" width="720"/></p><h1>Develop</h1>
+<p>h<a href="https://github.com/mdecourse/cmsimde">ttps://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
+<p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
+<p>init.py 位於  up_dir 目錄, 可以設定 site_title 與 uwsgi 等變數.</p>
+<p></p>
